@@ -107,5 +107,3 @@ Models and datasets are downloaded from Hugging Face (`google/flan-t5-*`, `NousR
 - Agrawal and Goyal, *Thompson Sampling for Contextual Bandits with Linear Payoffs*, ICML 2013.
 - Hendrycks et al., *Measuring Massive Multitask Language Understanding* (MMLU), ICLR 2021.
 - Jiang et al., *LLM-Blender* (MixInstruct), ACL 2023.
-
-Author: Bhavana, IIT Gandhinagar.
