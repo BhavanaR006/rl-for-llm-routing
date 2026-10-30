@@ -1,0 +1,122 @@
+{
+  "router": "r_trans",
+  "n_train": 250,
+  "n_test": 100,
+  "baseline_quality": -3.247377818822861,
+  "sweep": [
+    {
+      "theta": 0.05,
+      "cost_advantage_pct": 88.0,
+      "mean_quality": -4.57610906869173,
+      "quality_drop_pct": 40.91705135654711
+    },
+    {
+      "theta": 0.1,
+      "cost_advantage_pct": 87.0,
+      "mean_quality": -4.564493151009083,
+      "quality_drop_pct": 40.559349902305556
+    },
+    {
+      "theta": 0.15,
+      "cost_advantage_pct": 87.0,
+      "mean_quality": -4.564493151009083,
+      "quality_drop_pct": 40.559349902305556
+    },
+    {
+      "theta": 0.2,
+      "cost_advantage_pct": 79.0,
+      "mean_quality": -4.3116848662495615,
+      "quality_drop_pct": 32.77435231766473
+    },
+    {
+      "theta": 0.25,
+      "cost_advantage_pct": 75.0,
+      "mean_quality": -4.182778637707234,
+      "quality_drop_pct": 28.80480409339759
+    },
+    {
+      "theta": 0.3,
+      "cost_advantage_pct": 68.0,
+      "mean_quality": -4.02410191565752,
+      "quality_drop_pct": 23.918501023580117
+    },
+    {
+      "theta": 0.35,
+      "cost_advantage_pct": 60.0,
+      "mean_quality": -3.8662965086102488,
+      "quality_drop_pct": 19.05902929434122
+    },
+    {
+      "theta": 0.39999999999999997,
+      "cost_advantage_pct": 57.99999999999999,
+      "mean_quality": -3.7988080433011056,
+      "quality_drop_pct": 16.98078435105319
+    },
+    {
+      "theta": 0.44999999999999996,
+      "cost_advantage_pct": 55.00000000000001,
+      "mean_quality": -3.7044018033146857,
+      "quality_drop_pct": 14.073631403243713
+    },
+    {
+      "theta": 0.49999999999999994,
+      "cost_advantage_pct": 52.0,
+      "mean_quality": -3.619070321619511,
+      "quality_drop_pct": 11.445927253742976
+    },
+    {
+      "theta": 0.5499999999999999,
+      "cost_advantage_pct": 50.0,
+      "mean_quality": -3.5916064420342444,
+      "quality_drop_pct": 10.600202453072207
+    },
+    {
+      "theta": 0.6,
+      "cost_advantage_pct": 45.0,
+      "mean_quality": -3.5049371042847635,
+      "quality_drop_pct": 7.9313002622917805
+    },
+    {
+      "theta": 0.65,
+      "cost_advantage_pct": 38.0,
+      "mean_quality": -3.371148454248905,
+      "quality_drop_pct": 3.8114023785168825
+    },
+    {
+      "theta": 0.7,
+      "cost_advantage_pct": 36.0,
+      "mean_quality": -3.298875657618046,
+      "quality_drop_pct": 1.5858283719463424
+    },
+    {
+      "theta": 0.75,
+      "cost_advantage_pct": 30.0,
+      "mean_quality": -3.248663592636585,
+      "quality_drop_pct": 0.039594216794598
+    },
+    {
+      "theta": 0.7999999999999999,
+      "cost_advantage_pct": 23.0,
+      "mean_quality": -3.183178459405899,
+      "quality_drop_pct": -1.976959965817388
+    },
+    {
+      "theta": 0.85,
+      "cost_advantage_pct": 19.0,
+      "mean_quality": -3.1847406208515165,
+      "quality_drop_pct": -1.9288546472257904
+    },
+    {
+      "theta": 0.9,
+      "cost_advantage_pct": 12.0,
+      "mean_quality": -3.1611166942119597,
+      "quality_drop_pct": -2.656331644285536
+    },
+    {
+      "theta": 0.95,
+      "cost_advantage_pct": 6.0,
+      "mean_quality": -3.203411873579025,
+      "quality_drop_pct": -1.3538906680028029
+    }
+  ]
+}

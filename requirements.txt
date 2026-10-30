@@ -1,0 +1,16 @@
+# Python 3.10 (the notebooks were run on Python 3.10.12, one NVIDIA L40S GPU).
+# Versions were not recorded. On the machine you used, run:  pip freeze > requirements-frozen.txt
+# and pin the versions of the packages below (at least torch and transformers).
+numpy
+torch
+transformers
+datasets
+accelerate
+sentencepiece
+protobuf
+matplotlib
+scikit-learn
+jupyter
+ipykernel
+# The FrugalGPT notebooks in 01_frugalgpt/ may need extra client libraries for the model providers
+# they call; check the first cell of each notebook and add them here.
