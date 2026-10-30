@@ -91,13 +91,6 @@ jupyter lab
 
 Models and datasets are downloaded from Hugging Face (`google/flan-t5-*`, `NousResearch/Llama-2-7b-chat-hf`, `microsoft/deberta-v3-small`, `facebook/bart-large-cnn`, `cais/mmlu`, `llm-blender/mix-instruct`). No model weights are stored here, and the Llama-2 license applies to its use.
 
-## Limitations
-
-- HybridLLM and the FrugalGPT cascade are single runs, so they have no error bars; FrugalGPT was not run on MixInstruct in the comparison.
-- Utility uses a fixed cost weight of 0.5; other weights were not tested.
-- The RL reward is read from a table of precomputed answers; real use would need a feedback signal (for example a thumbs up or down).
-- Intervals over seeds reflect learning randomness only, not sampling of the test questions.
-- GPU runs were not forced to be deterministic, so rerunning a seed may differ slightly.
 
 ## References
 
