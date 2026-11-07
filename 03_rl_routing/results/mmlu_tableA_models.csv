@@ -1,0 +1,6 @@
+model,cost,accuracy,mean_P(correct)
+flan-t5-small,0.011,0.293,0.268
+flan-t5-base,0.036,0.334,0.311
+flan-t5-large,0.111,0.42,0.385
+flan-t5-xl,0.429,0.498,0.465
+llama-2-7b-chat,1.0,0.456,0.44

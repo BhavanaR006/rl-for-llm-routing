@@ -1,0 +1,16 @@
+{
+  "system": "hybridllm_paper_faithful_pair",
+  "method": "analytical_no_generation",
+  "note": "Paper-faithful 2-model HybridLLM (S=flan-t5-small, L=llama-2-7b-chat), the largest-gap pair, chosen for direct comparability to RL's full cost range. See hybridllm_pairs_comparison.json for small/medium/large gap pairs.",
+  "n_train": 10000,
+  "n_test": 5000,
+  "small_model": "flan-t5-small",
+  "large_model": "llama-2-7b-chat",
+  "label_building_cost_raw_params": 70800000000000.0,
+  "total_cost_raw_params": 88500000000000.0,
+  "total_cost_raw_params_best_case": 71200000000000.0,
+  "total_cost_raw_params_worst_case": 105800000000000.0,
+  "total_cost_raw_params_extrapolated_15000": 88500000000000.0,
+  "full_scale_n": 15000,
+  "scale_factor": 1.0
+}

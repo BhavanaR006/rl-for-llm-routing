@@ -1,0 +1,36 @@
+{
+  "n_train": 10000,
+  "n_test": 5000,
+  "pairs": {
+    "small_gap": {
+      "small_model": "flan-t5-xl",
+      "large_model": "llama-2-7b-chat",
+      "params_s": 3000000000.0,
+      "params_l": 7000000000.0,
+      "label_building_cost_raw_params": 100000000000000.0,
+      "total_cost_raw_params_best_case": 115000000000000.0,
+      "total_cost_raw_params_worst_case": 135000000000000.0,
+      "total_cost_raw_params_midpoint": 125000000000000.0
+    },
+    "medium_gap": {
+      "small_model": "flan-t5-large",
+      "large_model": "llama-2-7b-chat",
+      "params_s": 780000000.0,
+      "params_l": 7000000000.0,
+      "label_building_cost_raw_params": 77800000000000.0,
+      "total_cost_raw_params_best_case": 81700000000000.0,
+      "total_cost_raw_params_worst_case": 112800000000000.0,
+      "total_cost_raw_params_midpoint": 97250000000000.0
+    },
+    "large_gap": {
+      "small_model": "flan-t5-small",
+      "large_model": "llama-2-7b-chat",
+      "params_s": 80000000.0,
+      "params_l": 7000000000.0,
+      "label_building_cost_raw_params": 70800000000000.0,
+      "total_cost_raw_params_best_case": 71200000000000.0,
+      "total_cost_raw_params_worst_case": 105800000000000.0,
+      "total_cost_raw_params_midpoint": 88500000000000.0
+    }
+  }
+}

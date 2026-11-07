@@ -1,0 +1,4 @@
+pair,label_building_T,serving_5k_T,hybrid_total_T,RL_total_T,hybrid/RL
+large_gap,70.8,23.7,94.5,56.9,1.66
+medium_gap,77.8,23.3,101.1,56.9,1.78
+small_gap,100.0,23.5,123.5,56.9,2.17

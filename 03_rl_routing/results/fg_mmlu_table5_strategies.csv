@@ -1,0 +1,13 @@
+matched to,variant,cost,accuracy,strategy
+RL lambda=0.05 (cost 0.301),A,0.307,44.4%,"flan-t5-large (accept if score >= 0.30)  ->  flan-t5-small (accept if score >= 0.60)  ->  flan-t5-xl (final, always accepted)"
+RL lambda=0.05 (cost 0.301),B,0.294,45.3%,"flan-t5-large (accept if score >= 0.34)  ->  flan-t5-small (accept if score >= 0.36)  ->  flan-t5-xl (final, always accepted)"
+RL lambda=0.1 (cost 0.685),A,0.705,49.5%,"flan-t5-xl (accept if score >= 0.24)  ->  llama-2-7b-chat (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+RL lambda=0.1 (cost 0.685),B,0.608,49.8%,"flan-t5-xl (accept if score >= 0.28)  ->  llama-2-7b-chat (accept if score >= 0.31)  ->  flan-t5-large (final, always accepted)"
+RL lambda=0.25 (cost 0.238),A,0.244,43.4%,"flan-t5-large (accept if score >= 0.24)  ->  flan-t5-base (accept if score >= 0.41)  ->  flan-t5-xl (final, always accepted)"
+RL lambda=0.25 (cost 0.238),B,0.242,44.4%,"flan-t5-large (accept if score >= 0.31)  ->  flan-t5-small (accept if score >= 0.36)  ->  flan-t5-xl (final, always accepted)"
+RL lambda=0.5 (cost 0.112),A,0.111,42.0%,"flan-t5-large (final, always accepted)"
+RL lambda=0.5 (cost 0.112),B,0.111,42.0%,"flan-t5-large (final, always accepted)"
+RL lambda=1.0 (cost 0.071),A,0.068,34.3%,"flan-t5-base (accept if score >= 0.33)  ->  flan-t5-small (accept if score >= 0.24)  ->  flan-t5-large (final, always accepted)"
+RL lambda=1.0 (cost 0.071),B,0.073,36.4%,"flan-t5-base (accept if score >= 0.28)  ->  flan-t5-small (accept if score >= 0.34)  ->  flan-t5-large (final, always accepted)"
+RL lambda=2.0 (cost 0.036),A,0.036,32.0%,"flan-t5-small (accept if score >= 0.32)  ->  flan-t5-base (final, always accepted)"
+RL lambda=2.0 (cost 0.036),B,0.036,33.4%,"flan-t5-base (final, always accepted)"

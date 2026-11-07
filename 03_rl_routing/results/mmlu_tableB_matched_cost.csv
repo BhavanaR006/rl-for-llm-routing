@@ -1,0 +1,9 @@
+method,cost,accuracy,share_to_llama,utility
+Always Llama,1.0,0.456,1.0,-0.588
+RL (trained),0.238,0.475,0.0,-0.169
+Hybrid large_gap r_det,0.234,0.352,0.225,-0.413
+Hybrid large_gap r_trans,0.234,0.374,0.225,-0.369
+Hybrid medium_gap r_det,0.245,0.437,0.15,-0.249
+Hybrid medium_gap r_trans,0.245,0.433,0.15,-0.256
+Hybrid small_gap r_det,0.429,0.498,0.0,-0.218
+Hybrid small_gap r_trans,0.429,0.498,0.0,-0.218

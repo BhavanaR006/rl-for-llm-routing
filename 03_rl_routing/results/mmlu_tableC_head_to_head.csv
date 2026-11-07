@@ -1,0 +1,7 @@
+pair,label,both correct,only RL correct,only Hybrid correct,both wrong
+large_gap,r_det,20.4,27.0,14.8,37.8
+large_gap,r_trans,22.7,24.8,14.7,37.8
+medium_gap,r_det,30.8,16.7,12.9,39.6
+medium_gap,r_trans,31.5,16.0,11.8,40.7
+small_gap,r_det,41.3,6.2,8.6,44.0
+small_gap,r_trans,41.3,6.2,8.6,44.0

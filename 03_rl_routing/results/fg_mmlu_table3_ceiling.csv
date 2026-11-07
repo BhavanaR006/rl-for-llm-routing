@@ -1,0 +1,11 @@
+approach,avg cost,accuracy
+best single model (flan-t5-xl),0.429,49.8%
+always Llama-2-7b-chat,1.0,45.6%
+"RL (adopted, lambda=0.25)",0.238,47.5%
+"RL, highest-accuracy policy among trained lambdas",0.238,47.5%
+"HybridLLM large_gap, best threshold (on held-out)",0.975,45.7%
+"HybridLLM medium_gap, best threshold (on held-out)",0.8,46.6%
+"HybridLLM small_gap, best threshold (on held-out)",0.457,50.2%
+"cascade A, largest budget (picked on tuning split)",0.815,49.0%
+"cascade B, largest budget (picked on tuning split)",0.911,48.5%
+oracle: cheapest correct model,0.334,80.9%

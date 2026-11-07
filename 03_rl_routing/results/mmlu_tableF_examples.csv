@@ -1,0 +1,8 @@
+case,question,RL_model,RL_P(correct),llama_P(correct),correct_letter
+cheap model correct (Llama wrong),Find the order of the factor group Z_6/<3>.,flan-t5-base,0.316,0.448,B
+cheap model correct (Llama wrong),A medical practitioner places a stethoscope over the patient's seventh right intercostal space in the mid-axillary line. The stethoscope overlies the,flan-t5-base,0.548,0.134,C
+cheap model correct (Llama wrong),What drives differentiation?,flan-t5-xl,0.663,0.271,B
+cheap model correct (Llama wrong),How did the lunar maria form?,flan-t5-xl,0.856,0.0,D
+cheap model wrong (Llama correct),Find the order of the factor group (Z_4 x Z_12)/(<2> x <2>),flan-t5-base,0.135,0.624,C
+cheap model wrong (Llama correct),Find the maximum possible order for some element of Z_4 x Z_6.,flan-t5-base,0.168,0.89,C
+cheap model wrong (Llama correct),"Statement 1 | If a and b are elements of finite order in an Abelian group, then |ab| is the lcm (|a|,|b|). Statement 2 | If g is a group element and g^n = e, th",flan-t5-base,0.272,0.48,B

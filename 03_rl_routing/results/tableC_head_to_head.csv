@@ -1,0 +1,7 @@
+pair,label,both pass,only RL passes,only Hybrid passes,both fail,RL answer better by >0.5 BART,Hybrid better by >0.5 BART
+large_gap,r_det,83.0,5.8,5.3,5.9,16.3,14.4
+large_gap,r_trans,84.3,4.5,5.1,6.1,14.7,13.9
+medium_gap,r_det,85.9,2.9,4.2,7.0,8.3,11.5
+medium_gap,r_trans,84.6,4.2,3.6,7.6,8.9,10.5
+small_gap,r_det,79.7,9.1,5.3,5.9,19.1,23.7
+small_gap,r_trans,79.6,9.2,5.5,5.7,18.9,23.9

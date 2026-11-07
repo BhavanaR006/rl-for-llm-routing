@@ -1,0 +1,6 @@
+model,cost,BARTScore,pass@tau,ROUGE-L,avg_words
+flan-t5-small,0.011,-4.72,0.531,0.085,7.9
+flan-t5-base,0.036,-4.75,0.501,0.086,8.1
+flan-t5-large,0.111,-4.727,0.5,0.086,7.2
+flan-t5-xl,0.429,-4.344,0.578,0.098,8.6
+llama-2-7b-chat,1.0,-3.424,0.909,0.223,40.5

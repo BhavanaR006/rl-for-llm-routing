@@ -1,0 +1,6 @@
+model,acc_hold,AUROC p_max,AUROC scorer A (text),AUROC scorer B (confidence)
+flan-t5-small,0.293,0.542,0.563,0.542
+flan-t5-base,0.334,0.588,0.549,0.578
+flan-t5-large,0.42,0.666,0.617,0.649
+flan-t5-xl,0.498,0.726,0.65,0.724
+llama-2-7b-chat,0.456,0.718,0.684,0.72

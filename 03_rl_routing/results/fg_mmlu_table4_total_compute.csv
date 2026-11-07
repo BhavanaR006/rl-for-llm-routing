@@ -1,0 +1,7 @@
+system,serve cost/query,training or label-building (T),serving held-out (T),total (T)
+RL (online over the pool; includes learning),-,35.4,2.55,38.0
+HybridLLM large_gap (flan-t5-small + llama-2-7b-chat),0.234,67.3,2.51,69.8
+HybridLLM medium_gap (flan-t5-large + llama-2-7b-chat),0.245,73.9,2.62,76.5
+HybridLLM small_gap (flan-t5-xl + llama-2-7b-chat),0.429,95.0,4.59,99.6
+FrugalGPT cascade A (needs all 5 models on 9500 train questions),0.244,105.5,2.61,108.2
+FrugalGPT cascade B (needs all 5 models on 9500 train questions),0.242,105.5,2.59,108.1

@@ -1,0 +1,2441 @@
+{
+  "n_holdout": 1531,
+  "n_train": 9500,
+  "n_scorer_train": 6500,
+  "n_tune": 3000,
+  "max_cascade_len": 3,
+  "scorer_id": "distilbert-base-uncased",
+  "lambda_rl": 0.25,
+  "scorer_quality": {
+    "flan-t5-small": {
+      "acc": 0.293,
+      "auroc_pmax": 0.542,
+      "auroc_A": 0.563,
+      "auroc_B": 0.542
+    },
+    "flan-t5-base": {
+      "acc": 0.334,
+      "auroc_pmax": 0.588,
+      "auroc_A": 0.549,
+      "auroc_B": 0.578
+    },
+    "flan-t5-large": {
+      "acc": 0.42,
+      "auroc_pmax": 0.666,
+      "auroc_A": 0.617,
+      "auroc_B": 0.649
+    },
+    "flan-t5-xl": {
+      "acc": 0.498,
+      "auroc_pmax": 0.726,
+      "auroc_A": 0.65,
+      "auroc_B": 0.724
+    },
+    "llama-2-7b-chat": {
+      "acc": 0.456,
+      "auroc_pmax": 0.718,
+      "auroc_A": 0.684,
+      "auroc_B": 0.72
+    }
+  },
+  "cascades": {
+    "A": [
+      {
+        "L": [
+          0
+        ],
+        "taus": [],
+        "tune_acc": 0.29733333333333334,
+        "tune_cost": 0.011428571428571429,
+        "accuracy": 0.29327237099934683,
+        "cost": 0.011428571428571429,
+        "cost_with_scorer": 0.011428571428571429,
+        "stop_share": [
+          1.0
+        ],
+        "strategy": "flan-t5-small (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1
+        ],
+        "taus": [
+          0.23335731402039528
+        ],
+        "tune_acc": 0.301,
+        "tune_cost": 0.02035714285714286,
+        "accuracy": 0.3148269105160026,
+        "cost": 0.02129607166184567,
+        "cost_with_scorer": 0.03072464309041709,
+        "stop_share": [
+          0.7237099934683213,
+          0.2762900065316786
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.23)  ->  flan-t5-base (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1
+        ],
+        "taus": [
+          0.24077458679676056
+        ],
+        "tune_acc": 0.306,
+        "tune_cost": 0.021619047619047618,
+        "accuracy": 0.31809274983670804,
+        "cost": 0.022439115424092566,
+        "cost_with_scorer": 0.03186768685266398,
+        "stop_share": [
+          0.6917047681254083,
+          0.3082952318745918
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.24)  ->  flan-t5-base (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1
+        ],
+        "taus": [
+          0.24944725632667542
+        ],
+        "tune_acc": 0.308,
+        "tune_cost": 0.023297619047619046,
+        "accuracy": 0.3187459177008491,
+        "cost": 0.02402538023700663,
+        "cost_with_scorer": 0.03345395166557805,
+        "stop_share": [
+          0.6472893533638145,
+          0.3527106466361855
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.25)  ->  flan-t5-base (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1,
+          2
+        ],
+        "taus": [
+          0.24944725632667542,
+          0.1710611879825592
+        ],
+        "tune_acc": 0.30933333333333335,
+        "tune_cost": 0.025971904761904762,
+        "accuracy": 0.31678641410842584,
+        "cost": 0.028974526453298503,
+        "cost_with_scorer": 0.04172865540729682,
+        "stop_share": [
+          0.6472893533638145,
+          0.3082952318745918,
+          0.04441541476159373
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.25)  ->  flan-t5-base (accept if score >= 0.17)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1,
+          2
+        ],
+        "taus": [
+          0.24944725632667542,
+          0.1766715943813324
+        ],
+        "tune_acc": 0.313,
+        "tune_cost": 0.02961190476190476,
+        "accuracy": 0.31352057478772044,
+        "cost": 0.03137631799944015,
+        "cost_with_scorer": 0.04413044695343847,
+        "stop_share": [
+          0.6472893533638145,
+          0.286740692357936,
+          0.0659699542782495
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.25)  ->  flan-t5-base (accept if score >= 0.18)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1
+        ],
+        "taus": [
+          0.3106943964958191
+        ],
+        "tune_acc": 0.315,
+        "tune_cost": 0.03373809523809524,
+        "accuracy": 0.3200522534291313,
+        "cost": 0.03426611924979006,
+        "cost_with_scorer": 0.043694690678361466,
+        "stop_share": [
+          0.3605486610058785,
+          0.6394513389941215
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.31)  ->  flan-t5-base (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1
+        ],
+        "taus": [
+          0.32167303562164307
+        ],
+        "tune_acc": 0.321,
+        "tune_cost": 0.03513095238095238,
+        "accuracy": 0.3200522534291313,
+        "cost": 0.035572454978072224,
+        "cost_with_scorer": 0.04500102640664364,
+        "stop_share": [
+          0.3239712606139778,
+          0.6760287393860223
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.32)  ->  flan-t5-base (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.1710611879825592,
+          0.17328819632530212
+        ],
+        "tune_acc": 0.3406666666666667,
+        "tune_cost": 0.03676095238095238,
+        "accuracy": 0.32984977139124755,
+        "cost": 0.03741998693664271,
+        "cost_with_scorer": 0.0474151348325091,
+        "stop_share": [
+          0.9399085564990203,
+          0.05094709340300457,
+          0.009144350097975179
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.17)  ->  flan-t5-small (accept if score >= 0.17)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.1710611879825592,
+          0.27321891238292045
+        ],
+        "tune_acc": 0.3426666666666667,
+        "tune_cost": 0.03921238095238095,
+        "accuracy": 0.33442194644023515,
+        "cost": 0.04171409909489595,
+        "cost_with_scorer": 0.05170924699076234,
+        "stop_share": [
+          0.9399085564990203,
+          0.012410189418680601,
+          0.04768125408229915
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.17)  ->  flan-t5-small (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.1766715943813324,
+          0.24077458679676056
+        ],
+        "tune_acc": 0.3446666666666667,
+        "tune_cost": 0.04257428571428571,
+        "accuracy": 0.32658393207054215,
+        "cost": 0.04334515256135111,
+        "cost_with_scorer": 0.05360511337127928,
+        "stop_share": [
+          0.9118223383409536,
+          0.028739386022207707,
+          0.05943827563683867
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.18)  ->  flan-t5-small (accept if score >= 0.24)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.1766715943813324,
+          0.29098087549209595
+        ],
+        "tune_acc": 0.346,
+        "tune_cost": 0.04391142857142857,
+        "accuracy": 0.33050293925538865,
+        "cost": 0.045019128487449836,
+        "cost_with_scorer": 0.055279089297378,
+        "stop_share": [
+          0.9118223383409536,
+          0.013716525146962769,
+          0.07446113651208361
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.18)  ->  flan-t5-small (accept if score >= 0.29)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          2
+        ],
+        "taus": [
+          0.1919327825307846
+        ],
+        "tune_acc": 0.3476666666666667,
+        "tune_cost": 0.05395142857142857,
+        "accuracy": 0.33834095362508165,
+        "cost": 0.056311467761500415,
+        "cost_with_scorer": 0.06574003919007185,
+        "stop_share": [
+          0.8151534944480732,
+          0.18484650555192683
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.19)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.21733753383159637,
+          0.2568320035934448
+        ],
+        "tune_acc": 0.3516666666666667,
+        "tune_cost": 0.06150380952380952,
+        "accuracy": 0.33834095362508165,
+        "cost": 0.06457684053373146,
+        "cost_with_scorer": 0.07704152281422041,
+        "stop_share": [
+          0.6779882429784455,
+          0.09601567602873938,
+          0.22599608099281515
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.22)  ->  flan-t5-small (accept if score >= 0.26)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.32766830921173096,
+          0.24077458679676056
+        ],
+        "tune_acc": 0.356,
+        "tune_cost": 0.06567809523809523,
+        "accuracy": 0.34291312867406926,
+        "cost": 0.06839134086031538,
+        "cost_with_scorer": 0.08232173182793694,
+        "stop_share": [
+          0.5225342913128674,
+          0.23318092749836708,
+          0.2442847811887655
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.33)  ->  flan-t5-small (accept if score >= 0.24)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.3562227934598923,
+          0.24944725632667542
+        ],
+        "tune_acc": 0.35833333333333334,
+        "tune_cost": 0.07043714285714286,
+        "accuracy": 0.34617896799477466,
+        "cost": 0.07336288140337781,
+        "cost_with_scorer": 0.08755192684519923,
+        "stop_share": [
+          0.4951012410189419,
+          0.21881123448726322,
+          0.28608752449379493
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.36)  ->  flan-t5-small (accept if score >= 0.25)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.32766830921173096,
+          0.2568320035934448
+        ],
+        "tune_acc": 0.3596666666666667,
+        "tune_cost": 0.07091523809523809,
+        "accuracy": 0.3481384715871979,
+        "cost": 0.0739227395726416,
+        "cost_with_scorer": 0.08785313054026314,
+        "stop_share": [
+          0.5225342913128674,
+          0.18354016982364468,
+          0.29392553886348793
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.33)  ->  flan-t5-small (accept if score >= 0.26)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.3562227934598923,
+          0.2568320035934448
+        ],
+        "tune_acc": 0.361,
+        "tune_cost": 0.07311142857142858,
+        "accuracy": 0.348791639451339,
+        "cost": 0.07547354670150229,
+        "cost_with_scorer": 0.08966259214332371,
+        "stop_share": [
+          0.4951012410189419,
+          0.1998693664271718,
+          0.30502939255388634
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.36)  ->  flan-t5-small (accept if score >= 0.26)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.32766830921173096,
+          0.2991051971912384
+        ],
+        "tune_acc": 0.36566666666666664,
+        "tune_cost": 0.0813895238095238,
+        "accuracy": 0.35793598954931416,
+        "cost": 0.0844032845012597,
+        "cost_with_scorer": 0.09833367546888123,
+        "stop_share": [
+          0.5225342913128674,
+          0.08948399738732854,
+          0.3879817112998041
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.33)  ->  flan-t5-small (accept if score >= 0.30)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          2
+        ],
+        "taus": [
+          0.32766830921173096
+        ],
+        "tune_acc": 0.37333333333333335,
+        "tune_cost": 0.0866742857142857,
+        "accuracy": 0.3638145003265839,
+        "cost": 0.08891760753942334,
+        "cost_with_scorer": 0.09834617896799476,
+        "stop_share": [
+          0.5225342913128674,
+          0.4774657086871326
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.33)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          2
+        ],
+        "taus": [
+          0.34798020124435425
+        ],
+        "tune_acc": 0.38333333333333336,
+        "tune_cost": 0.095,
+        "accuracy": 0.3886348791639451,
+        "cost": 0.09636465428758048,
+        "cost_with_scorer": 0.10579322571615193,
+        "stop_share": [
+          0.23775310254735468,
+          0.7622468974526453
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.35)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          2
+        ],
+        "taus": [
+          0.3656831681728363
+        ],
+        "tune_acc": 0.3903333333333333,
+        "tune_cost": 0.09945714285714287,
+        "accuracy": 0.3997387328543436,
+        "cost": 0.1017504898758981,
+        "cost_with_scorer": 0.11117906130446956,
+        "stop_share": [
+          0.18941868060091444,
+          0.8105813193990856
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.37)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          2
+        ],
+        "taus": [
+          0.403566837310791
+        ],
+        "tune_acc": 0.4003333333333334,
+        "tune_cost": 0.10889142857142858,
+        "accuracy": 0.4082299150881777,
+        "cost": 0.11004758794438742,
+        "cost_with_scorer": 0.1194761593729589,
+        "stop_share": [
+          0.11495754408883083,
+          0.8850424559111691
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.40)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          2
+        ],
+        "taus": [],
+        "tune_acc": 0.425,
+        "tune_cost": 0.11142857142857143,
+        "accuracy": 0.4199869366427172,
+        "cost": 0.11142857142857142,
+        "cost_with_scorer": 0.11142857142857142,
+        "stop_share": [
+          1.0
+        ],
+        "strategy": "flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          2
+        ],
+        "taus": [
+          0.5959629416465759
+        ],
+        "tune_acc": 0.42500000000000004,
+        "tune_cost": 0.12282000000000001,
+        "accuracy": 0.4199869366427172,
+        "cost": 0.12278436129513856,
+        "cost_with_scorer": 0.13221293272371004,
+        "stop_share": [
+          0.0006531678641410843,
+          0.999346832135859
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.60)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          3,
+          1
+        ],
+        "taus": [
+          0.16132023930549622,
+          0.23091977834701538
+        ],
+        "tune_acc": 0.42533333333333334,
+        "tune_cost": 0.1293690476190476,
+        "accuracy": 0.4232527759634226,
+        "cost": 0.13216665111505085,
+        "cost_with_scorer": 0.14202631333395538,
+        "stop_share": [
+          0.9542782495101241,
+          0.013716525146962769,
+          0.03200522534291313
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.16)  ->  flan-t5-xl (accept if score >= 0.23)  ->  flan-t5-base (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          4,
+          1
+        ],
+        "taus": [
+          0.16132023930549622,
+          0.29638279477755225
+        ],
+        "tune_acc": 0.4256666666666667,
+        "tune_cost": 0.15164285714285713,
+        "accuracy": 0.4239059438275637,
+        "cost": 0.15815340113837825,
+        "cost_with_scorer": 0.16801306335728283,
+        "stop_share": [
+          0.9542782495101241,
+          0.017635532331809273,
+          0.028086218158066622
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.16)  ->  llama-2-7b-chat (accept if score >= 0.30)  ->  flan-t5-base (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          4
+        ],
+        "taus": [
+          0.18126320838928223,
+          0.26435837149620056
+        ],
+        "tune_acc": 0.42633333333333334,
+        "tune_cost": 0.17170666666666667,
+        "accuracy": 0.41802743305029394,
+        "cost": 0.1778128207520761,
+        "cost_with_scorer": 0.18812204908089952,
+        "stop_share": [
+          0.9065969954278249,
+          0.028086218158066622,
+          0.06531678641410843
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.18)  ->  flan-t5-small (accept if score >= 0.26)  ->  llama-2-7b-chat (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          4
+        ],
+        "taus": [
+          0.18126320838928223,
+          0.29098087549209595
+        ],
+        "tune_acc": 0.42733333333333334,
+        "tune_cost": 0.18270666666666668,
+        "accuracy": 0.4193337687785761,
+        "cost": 0.18761033871419236,
+        "cost_with_scorer": 0.19791956704301575,
+        "stop_share": [
+          0.9065969954278249,
+          0.018288700195950358,
+          0.07511430437622468
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.18)  ->  flan-t5-small (accept if score >= 0.29)  ->  llama-2-7b-chat (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          3
+        ],
+        "taus": [
+          0.22541658580303192,
+          0.34798020124435425
+        ],
+        "tune_acc": 0.42833333333333334,
+        "tune_cost": 0.21455238095238094,
+        "accuracy": 0.43043762246897455,
+        "cost": 0.22856209760194082,
+        "cost_with_scorer": 0.2406326397312681,
+        "stop_share": [
+          0.7197909862834748,
+          0.014369693011103853,
+          0.26583932070542127
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.23)  ->  flan-t5-small (accept if score >= 0.35)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          1,
+          3
+        ],
+        "taus": [
+          0.23934932053089142,
+          0.41036239514748246
+        ],
+        "tune_acc": 0.432,
+        "tune_cost": 0.22976190476190478,
+        "accuracy": 0.43435662965382105,
+        "cost": 0.24362508164598295,
+        "cost_with_scorer": 0.2561020808061958,
+        "stop_share": [
+          0.6766819072501633,
+          0.041802743305029394,
+          0.28151534944480733
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.24)  ->  flan-t5-base (accept if score >= 0.41)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          3
+        ],
+        "taus": [
+          0.23934932053089142
+        ],
+        "tune_acc": 0.43433333333333335,
+        "tune_cost": 0.23542857142857143,
+        "accuracy": 0.4389288047028086,
+        "cost": 0.24999346832135855,
+        "cost_with_scorer": 0.25942203974993006,
+        "stop_share": [
+          0.6766819072501633,
+          0.3233180927498367
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.24)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          3
+        ],
+        "taus": [
+          0.2787475362420082,
+          0.3656831681728363
+        ],
+        "tune_acc": 0.43833333333333335,
+        "tune_cost": 0.26685714285714285,
+        "accuracy": 0.4389288047028086,
+        "cost": 0.2858057292152654,
+        "cost_with_scorer": 0.29914490995614446,
+        "stop_share": [
+          0.5852384062704115,
+          0.018941868060091443,
+          0.3958197256694971
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.28)  ->  flan-t5-small (accept if score >= 0.37)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          3
+        ],
+        "taus": [
+          0.2787475362420082,
+          0.5959629416465759
+        ],
+        "tune_acc": 0.443,
+        "tune_cost": 0.27628571428571425,
+        "accuracy": 0.4408883082952319,
+        "cost": 0.2939236726695903,
+        "cost_with_scorer": 0.3072628534104694,
+        "stop_share": [
+          0.5852384062704115,
+          0.0,
+          0.4147615937295885
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.28)  ->  flan-t5-small (accept if score >= 0.60)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          3
+        ],
+        "taus": [
+          0.3015677034854889,
+          0.5959629416465759
+        ],
+        "tune_acc": 0.44366666666666665,
+        "tune_cost": 0.2938857142857143,
+        "accuracy": 0.4435009797517962,
+        "cost": 0.30685639637958384,
+        "cost_with_scorer": 0.3204727069142484,
+        "stop_share": [
+          0.5558458523840627,
+          0.0,
+          0.4441541476159373
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.30)  ->  flan-t5-small (accept if score >= 0.60)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          3
+        ],
+        "taus": [
+          0.3250918686389923
+        ],
+        "tune_acc": 0.44666666666666666,
+        "tune_cost": 0.30757142857142855,
+        "accuracy": 0.44676681907250165,
+        "cost": 0.3154968741252216,
+        "cost_with_scorer": 0.3249254455537931,
+        "stop_share": [
+          0.5238406270411495,
+          0.4761593729588504
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.33)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          3
+        ],
+        "taus": [
+          0.3250918686389923,
+          0.5959629416465759
+        ],
+        "tune_acc": 0.447,
+        "tune_cost": 0.3126590476190476,
+        "accuracy": 0.44676681907250165,
+        "cost": 0.3209386955304656,
+        "cost_with_scorer": 0.33485676961836336,
+        "stop_share": [
+          0.5238406270411495,
+          0.0,
+          0.4761593729588504
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.33)  ->  flan-t5-small (accept if score >= 0.60)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          3,
+          2
+        ],
+        "taus": [
+          0.3822182963291803,
+          0.1980641782283783
+        ],
+        "tune_acc": 0.45466666666666666,
+        "tune_cost": 0.38153428571428577,
+        "accuracy": 0.472893533638145,
+        "cost": 0.3872109732201176,
+        "cost_with_scorer": 0.4046393580292993,
+        "stop_share": [
+          0.15153494448073154,
+          0.7393860222077073,
+          0.10907903331156107
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.38)  ->  flan-t5-xl (accept if score >= 0.20)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          3,
+          2
+        ],
+        "taus": [
+          0.43062615394592285,
+          0.19072403013706207
+        ],
+        "tune_acc": 0.474,
+        "tune_cost": 0.41284571428571426,
+        "accuracy": 0.48203788373612017,
+        "cost": 0.41439208733787447,
+        "cost_with_scorer": 0.43252253429131304,
+        "stop_share": [
+          0.07707380796864795,
+          0.8563030698889614,
+          0.06662312214239059
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.43)  ->  flan-t5-xl (accept if score >= 0.19)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          3,
+          2
+        ],
+        "taus": [
+          0.1980641782283783
+        ],
+        "tune_acc": 0.499,
+        "tune_cost": 0.4420542857142857,
+        "accuracy": 0.5009797517962117,
+        "cost": 0.440871512550154,
+        "cost_with_scorer": 0.45030008397872545,
+        "stop_share": [
+          0.8896146309601568,
+          0.11038536903984324
+        ],
+        "strategy": "flan-t5-xl (accept if score >= 0.20)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          3,
+          4,
+          2
+        ],
+        "taus": [
+          0.1980641782283783,
+          0.5751108527183533
+        ],
+        "tune_acc": 0.49966666666666665,
+        "tune_cost": 0.5623857142857143,
+        "accuracy": 0.4996734160679295,
+        "cost": 0.5504562844079499,
+        "cost_with_scorer": 0.5609256321731828,
+        "stop_share": [
+          0.8896146309601568,
+          0.007184846505551927,
+          0.10320052253429131
+        ],
+        "strategy": "flan-t5-xl (accept if score >= 0.20)  ->  llama-2-7b-chat (accept if score >= 0.58)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          3,
+          4,
+          2
+        ],
+        "taus": [
+          0.20946967601776123,
+          0.26971012353897095
+        ],
+        "tune_acc": 0.5006666666666667,
+        "tune_cost": 0.603604761904762,
+        "accuracy": 0.5022860875244938,
+        "cost": 0.6000223943267705,
+        "cost_with_scorer": 0.6109659419613698,
+        "stop_share": [
+          0.8393207054212932,
+          0.06401045068582625,
+          0.09666884389288047
+        ],
+        "strategy": "flan-t5-xl (accept if score >= 0.21)  ->  llama-2-7b-chat (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          3,
+          4,
+          2
+        ],
+        "taus": [
+          0.23091977834701538,
+          0.26971012353897095
+        ],
+        "tune_acc": 0.5033333333333333,
+        "tune_cost": 0.6476866666666666,
+        "accuracy": 0.4977139124755062,
+        "cost": 0.6534477932257161,
+        "cost_with_scorer": 0.6648593822898199,
+        "stop_share": [
+          0.7896799477465709,
+          0.07968647942521227,
+          0.13063357282821686
+        ],
+        "strategy": "flan-t5-xl (accept if score >= 0.23)  ->  llama-2-7b-chat (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          3,
+          4,
+          2
+        ],
+        "taus": [
+          0.2351083904504776,
+          0.26971012353897095
+        ],
+        "tune_acc": 0.5046666666666667,
+        "tune_cost": 0.6891419047619047,
+        "accuracy": 0.4951012410189419,
+        "cost": 0.7046262946720164,
+        "cost_with_scorer": 0.7164751329663154,
+        "stop_share": [
+          0.7433050293925539,
+          0.0829523187459177,
+          0.1737426518615284
+        ],
+        "strategy": "flan-t5-xl (accept if score >= 0.24)  ->  llama-2-7b-chat (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          3,
+          4,
+          2
+        ],
+        "taus": [
+          0.25982561707496643,
+          0.26971012353897095
+        ],
+        "tune_acc": 0.5053333333333333,
+        "tune_cost": 0.7409295238095238,
+        "accuracy": 0.4924885695623775,
+        "cost": 0.7643668937202577,
+        "cost_with_scorer": 0.776739199402818,
+        "stop_share": [
+          0.6877857609405618,
+          0.10058785107772697,
+          0.2116263879817113
+        ],
+        "strategy": "flan-t5-xl (accept if score >= 0.26)  ->  llama-2-7b-chat (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          3,
+          4,
+          2
+        ],
+        "taus": [
+          0.30184259017308546,
+          0.26971012353897095
+        ],
+        "tune_acc": 0.506,
+        "tune_cost": 0.7853419047619047,
+        "accuracy": 0.48987589810581317,
+        "cost": 0.815244937949053,
+        "cost_with_scorer": 0.828085285061118,
+        "stop_share": [
+          0.6381450032658393,
+          0.13912475506205094,
+          0.22273024167210972
+        ],
+        "strategy": "flan-t5-xl (accept if score >= 0.30)  ->  llama-2-7b-chat (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+      }
+    ],
+    "B": [
+      {
+        "L": [
+          0
+        ],
+        "taus": [],
+        "tune_acc": 0.29733333333333334,
+        "tune_cost": 0.011428571428571429,
+        "accuracy": 0.29327237099934683,
+        "cost": 0.011428571428571429,
+        "cost_with_scorer": 0.011428571428571429,
+        "stop_share": [
+          1.0
+        ],
+        "strategy": "flan-t5-small (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1
+        ],
+        "taus": [
+          0.2736464249657948
+        ],
+        "tune_acc": 0.298,
+        "tune_cost": 0.012916666666666667,
+        "accuracy": 0.29653821032005223,
+        "cost": 0.013388075020994683,
+        "cost_with_scorer": 0.02281664644956611,
+        "stop_share": [
+          0.9451338994121489,
+          0.054866100587851074
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.27)  ->  flan-t5-base (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1
+        ],
+        "taus": [
+          0.2764484165312272
+        ],
+        "tune_acc": 0.3006666666666667,
+        "tune_cost": 0.014404761904761905,
+        "accuracy": 0.2919660352710647,
+        "cost": 0.015137631799944014,
+        "cost_with_scorer": 0.02456620322851544,
+        "stop_share": [
+          0.8961463096015676,
+          0.1038536903984324
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.28)  ->  flan-t5-base (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1,
+          2
+        ],
+        "taus": [
+          0.2736464249657948,
+          0.27551968071766925
+        ],
+        "tune_acc": 0.29933333333333334,
+        "tune_cost": 0.014068095238095237,
+        "accuracy": 0.2952318745917701,
+        "cost": 0.01528039563310628,
+        "cost_with_scorer": 0.025226276010077445,
+        "stop_share": [
+          0.9451338994121489,
+          0.037883736120182886,
+          0.016982364467668192
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.27)  ->  flan-t5-base (accept if score >= 0.28)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1
+        ],
+        "taus": [
+          0.27824643608951655
+        ],
+        "tune_acc": 0.30566666666666664,
+        "tune_cost": 0.015892857142857143,
+        "accuracy": 0.2958850424559112,
+        "cost": 0.01698049827377064,
+        "cost_with_scorer": 0.02640906970234207,
+        "stop_share": [
+          0.8445460483344219,
+          0.15545395166557804
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.28)  ->  flan-t5-base (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1
+        ],
+        "taus": [
+          0.2797404626191902
+        ],
+        "tune_acc": 0.30633333333333335,
+        "tune_cost": 0.01738095238095238,
+        "accuracy": 0.2998040496407577,
+        "cost": 0.018450125968088087,
+        "cost_with_scorer": 0.02787869739665951,
+        "stop_share": [
+          0.8033964728935337,
+          0.19660352710646636
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.28)  ->  flan-t5-base (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1
+        ],
+        "taus": [
+          0.2812994150602463
+        ],
+        "tune_acc": 0.308,
+        "tune_cost": 0.01886904761904762,
+        "accuracy": 0.30111038536903983,
+        "cost": 0.020246337594476065,
+        "cost_with_scorer": 0.029674909023047494,
+        "stop_share": [
+          0.7531025473546702,
+          0.24689745264532986
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.28)  ->  flan-t5-base (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1,
+          2
+        ],
+        "taus": [
+          0.2812994150602463,
+          0.27029422723777263
+        ],
+        "tune_acc": 0.31033333333333335,
+        "tune_cost": 0.020169047619047618,
+        "accuracy": 0.30045721750489873,
+        "cost": 0.021483624148549037,
+        "cost_with_scorer": 0.03324008584491928,
+        "stop_share": [
+          0.7531025473546702,
+          0.2357935989549314,
+          0.011103853690398433
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.28)  ->  flan-t5-base (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1,
+          2
+        ],
+        "taus": [
+          0.2829605712256936,
+          0.27029422723777263
+        ],
+        "tune_acc": 0.311,
+        "tune_cost": 0.021805714285714286,
+        "accuracy": 0.30241672109732204,
+        "cost": 0.023145469814313705,
+        "cost_with_scorer": 0.03530223010170757,
+        "stop_share": [
+          0.7106466361854997,
+          0.2769431743958197,
+          0.012410189418680601
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.28)  ->  flan-t5-base (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1,
+          2
+        ],
+        "taus": [
+          0.28470335652767703,
+          0.27029422723777263
+        ],
+        "tune_acc": 0.31266666666666665,
+        "tune_cost": 0.023553809523809522,
+        "accuracy": 0.30502939255388634,
+        "cost": 0.02452458710460017,
+        "cost_with_scorer": 0.03702622002426052,
+        "stop_share": [
+          0.674069235793599,
+          0.31286740692357934,
+          0.013063357282821686
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.28)  ->  flan-t5-base (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1,
+          2
+        ],
+        "taus": [
+          0.2881945338666436,
+          0.27029422723777263
+        ],
+        "tune_acc": 0.31533333333333335,
+        "tune_cost": 0.027124285714285712,
+        "accuracy": 0.31417374265186154,
+        "cost": 0.027448912942054683,
+        "cost_with_scorer": 0.04066492488569563,
+        "stop_share": [
+          0.5983017635532332,
+          0.3866753755715219,
+          0.015022860875244938
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.29)  ->  flan-t5-base (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          2
+        ],
+        "taus": [
+          0.27824643608951655
+        ],
+        "tune_acc": 0.314,
+        "tune_cost": 0.025357142857142856,
+        "accuracy": 0.30568256041802744,
+        "cost": 0.02875058318559299,
+        "cost_with_scorer": 0.038179154614164414,
+        "stop_share": [
+          0.8445460483344219,
+          0.15545395166557804
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.28)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1,
+          2
+        ],
+        "taus": [
+          0.2881945338666436,
+          0.2721740491988972
+        ],
+        "tune_acc": 0.31633333333333336,
+        "tune_cost": 0.029092857142857143,
+        "accuracy": 0.3154800783801437,
+        "cost": 0.02999626761220491,
+        "cost_with_scorer": 0.043212279555845855,
+        "stop_share": [
+          0.5983017635532332,
+          0.3638145003265839,
+          0.037883736120182886
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.29)  ->  flan-t5-base (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1,
+          2
+        ],
+        "taus": [
+          0.29242307261477346,
+          0.27029422723777263
+        ],
+        "tune_acc": 0.319,
+        "tune_cost": 0.03047190476190476,
+        "accuracy": 0.3200522534291313,
+        "cost": 0.030288326957170847,
+        "cost_with_scorer": 0.04413865820658767,
+        "stop_share": [
+          0.5310254735467015,
+          0.45003265839320705,
+          0.018941868060091443
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.29)  ->  flan-t5-base (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1,
+          2
+        ],
+        "taus": [
+          0.29242307261477346,
+          0.2721740491988972
+        ],
+        "tune_acc": 0.32066666666666666,
+        "tune_cost": 0.03288619047619047,
+        "accuracy": 0.32135858915741344,
+        "cost": 0.033054026313333956,
+        "cost_with_scorer": 0.04690435756275078,
+        "stop_share": [
+          0.5310254735467015,
+          0.42521227955584584,
+          0.043762246897452645
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.29)  ->  flan-t5-base (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          1,
+          2
+        ],
+        "taus": [
+          0.29242307261477346,
+          0.2739045251885071
+        ],
+        "tune_acc": 0.32366666666666666,
+        "tune_cost": 0.0356347619047619,
+        "accuracy": 0.32593076420640105,
+        "cost": 0.03531025473546703,
+        "cost_with_scorer": 0.049160585984883834,
+        "stop_share": [
+          0.5310254735467015,
+          0.40496407576747223,
+          0.06401045068582625
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.29)  ->  flan-t5-base (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1
+        ],
+        "taus": [],
+        "tune_acc": 0.339,
+        "tune_cost": 0.03571428571428571,
+        "accuracy": 0.33442194644023515,
+        "cost": 0.0357142857142857,
+        "cost_with_scorer": 0.0357142857142857,
+        "stop_share": [
+          1.0
+        ],
+        "strategy": "flan-t5-base (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.27029422723777263,
+          0.28470335652767703
+        ],
+        "tune_acc": 0.3426666666666667,
+        "tune_cost": 0.03789904761904762,
+        "accuracy": 0.33442194644023515,
+        "cost": 0.03769245124568442,
+        "cost_with_scorer": 0.04755211346458897,
+        "stop_share": [
+          0.9542782495101241,
+          0.032658393207054215,
+          0.013063357282821686
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.27)  ->  flan-t5-small (accept if score >= 0.28)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.2721740491988972,
+          0.2973867220826943
+        ],
+        "tune_acc": 0.3456666666666667,
+        "tune_cost": 0.04260952380952381,
+        "accuracy": 0.3396472893533638,
+        "cost": 0.04277782961649715,
+        "cost_with_scorer": 0.05305010730614912,
+        "stop_share": [
+          0.9105160026126714,
+          0.03527106466361855,
+          0.05421293272370999
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.27)  ->  flan-t5-small (accept if score >= 0.30)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          2
+        ],
+        "taus": [
+          0.2721740491988972
+        ],
+        "tune_acc": 0.3516666666666667,
+        "tune_cost": 0.045,
+        "accuracy": 0.340953625081646,
+        "cost": 0.04568535970887374,
+        "cost_with_scorer": 0.055113931137445185,
+        "stop_share": [
+          0.9105160026126714,
+          0.08948399738732854
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.2739045251885071,
+          0.31371335266130973
+        ],
+        "tune_acc": 0.3526666666666667,
+        "tune_cost": 0.04891714285714286,
+        "accuracy": 0.34552580013063355,
+        "cost": 0.0484939815246804,
+        "cost_with_scorer": 0.05909881496687506,
+        "stop_share": [
+          0.8752449379490529,
+          0.022860875244937948,
+          0.10189418680600915
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.27)  ->  flan-t5-small (accept if score >= 0.31)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.2739045251885071,
+          0.3597851541933684
+        ],
+        "tune_acc": 0.355,
+        "tune_cost": 0.05084857142857143,
+        "accuracy": 0.34617896799477466,
+        "cost": 0.050895773070822055,
+        "cost_with_scorer": 0.0615006065130167,
+        "stop_share": [
+          0.8752449379490529,
+          0.0013063357282821686,
+          0.12344872632266493
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.27)  ->  flan-t5-small (accept if score >= 0.36)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.27551968071766925,
+          0.3597851541933684
+        ],
+        "tune_acc": 0.35833333333333334,
+        "tune_cost": 0.05593047619047618,
+        "accuracy": 0.34683213585891576,
+        "cost": 0.05587104600167957,
+        "cost_with_scorer": 0.06685770271531212,
+        "stop_share": [
+          0.8347485303723057,
+          0.0013063357282821686,
+          0.16394513389941215
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.28)  ->  flan-t5-small (accept if score >= 0.36)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.27768334606187683,
+          0.3597851541933684
+        ],
+        "tune_acc": 0.363,
+        "tune_cost": 0.060938095238095236,
+        "accuracy": 0.3514043109079033,
+        "cost": 0.0618092749836708,
+        "cost_with_scorer": 0.07325165624708407,
+        "stop_share": [
+          0.7864141084258655,
+          0.0013063357282821686,
+          0.2122795558458524
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.28)  ->  flan-t5-small (accept if score >= 0.36)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.27985678506139483,
+          0.3597851541933684
+        ],
+        "tune_acc": 0.36766666666666664,
+        "tune_cost": 0.0658342857142857,
+        "accuracy": 0.356629653821032,
+        "cost": 0.06727349071568536,
+        "cost_with_scorer": 0.07914080432956985,
+        "stop_share": [
+          0.7413455258001306,
+          0.001959503592423253,
+          0.2566949706074461
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.28)  ->  flan-t5-small (accept if score >= 0.36)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.28267286985131806,
+          0.34464151388522685
+        ],
+        "tune_acc": 0.37166666666666665,
+        "tune_cost": 0.0702847619047619,
+        "accuracy": 0.3638145003265839,
+        "cost": 0.07281981897919194,
+        "cost_with_scorer": 0.08517980778202856,
+        "stop_share": [
+          0.6890920966688439,
+          0.009797517962116264,
+          0.30111038536903983
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.28)  ->  flan-t5-small (accept if score >= 0.34)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.28267286985131806,
+          0.3597851541933684
+        ],
+        "tune_acc": 0.372,
+        "tune_cost": 0.07091619047619047,
+        "accuracy": 0.364467668190725,
+        "cost": 0.07369319772324344,
+        "cost_with_scorer": 0.08605318652608006,
+        "stop_share": [
+          0.6890920966688439,
+          0.001959503592423253,
+          0.30894839973873284
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.28)  ->  flan-t5-small (accept if score >= 0.36)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          0,
+          2
+        ],
+        "taus": [
+          0.286672387142925,
+          0.3597851541933684
+        ],
+        "tune_acc": 0.37333333333333335,
+        "tune_cost": 0.0760352380952381,
+        "accuracy": 0.36708033964728937,
+        "cost": 0.07907716711766354,
+        "cost_with_scorer": 0.09185592983110946,
+        "stop_share": [
+          0.6446766819072501,
+          0.002612671456564337,
+          0.3527106466361855
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.29)  ->  flan-t5-small (accept if score >= 0.36)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          2
+        ],
+        "taus": [
+          0.29433675909962137
+        ],
+        "tune_acc": 0.378,
+        "tune_cost": 0.08214285714285714,
+        "accuracy": 0.372305682560418,
+        "cost": 0.08331342726509285,
+        "cost_with_scorer": 0.09274199869366427,
+        "stop_share": [
+          0.5728282168517309,
+          0.4271717831482691
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.29)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          2,
+          0
+        ],
+        "taus": [
+          0.30037387345864874,
+          0.2570866747003552
+        ],
+        "tune_acc": 0.37933333333333336,
+        "tune_cost": 0.08678571428571429,
+        "accuracy": 0.37491835401698237,
+        "cost": 0.08892507231501352,
+        "cost_with_scorer": 0.10285546328263505,
+        "stop_share": [
+          0.5225342913128674,
+          0.4768125408229915,
+          0.0006531678641410843
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.30)  ->  flan-t5-large (accept if score >= 0.26)  ->  flan-t5-small (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          2,
+          1
+        ],
+        "taus": [
+          0.31371335266130973,
+          0.2570866747003552
+        ],
+        "tune_acc": 0.38433333333333336,
+        "tune_cost": 0.095,
+        "accuracy": 0.3984323971260614,
+        "cost": 0.09718857889334703,
+        "cost_with_scorer": 0.11387179247923858,
+        "stop_share": [
+          0.23056825604180275,
+          0.7687785760940562,
+          0.0006531678641410843
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.31)  ->  flan-t5-large (accept if score >= 0.26)  ->  flan-t5-base (final, always accepted)"
+      },
+      {
+        "L": [
+          1,
+          2
+        ],
+        "taus": [
+          0.3193083247664448
+        ],
+        "tune_acc": 0.39266666666666666,
+        "tune_cost": 0.10071428571428571,
+        "accuracy": 0.3847158719790986,
+        "cost": 0.10289166744424746,
+        "cost_with_scorer": 0.11232023887281889,
+        "stop_share": [
+          0.39712606139777923,
+          0.6028739386022207
+        ],
+        "strategy": "flan-t5-base (accept if score >= 0.32)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          2
+        ],
+        "taus": [
+          0.33407861641720926
+        ],
+        "tune_acc": 0.4036666666666667,
+        "tune_cost": 0.10892857142857143,
+        "accuracy": 0.40953625081645983,
+        "cost": 0.11070262200242605,
+        "cost_with_scorer": 0.12013119343099751,
+        "stop_share": [
+          0.10907903331156107,
+          0.8909209666884389
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.33)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          2
+        ],
+        "taus": [],
+        "tune_acc": 0.425,
+        "tune_cost": 0.11142857142857143,
+        "accuracy": 0.4199869366427172,
+        "cost": 0.11142857142857142,
+        "cost_with_scorer": 0.11142857142857142,
+        "stop_share": [
+          1.0
+        ],
+        "strategy": "flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          3
+        ],
+        "taus": [
+          0.26758505430524837,
+          0.2863311586382409
+        ],
+        "tune_acc": 0.42633333333333334,
+        "tune_cost": 0.1191904761904762,
+        "accuracy": 0.4193337687785761,
+        "cost": 0.12032658393207055,
+        "cost_with_scorer": 0.13016777083138936,
+        "stop_share": [
+          0.9562377531025473,
+          0.024167210973220117,
+          0.019595035924232528
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.27)  ->  flan-t5-small (accept if score >= 0.29)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          3
+        ],
+        "taus": [
+          0.26758505430524837,
+          0.30596576317096774
+        ],
+        "tune_acc": 0.42766666666666664,
+        "tune_cost": 0.12676190476190477,
+        "accuracy": 0.4199869366427172,
+        "cost": 0.1267649528786041,
+        "cost_with_scorer": 0.1366061397779229,
+        "stop_share": [
+          0.9562377531025473,
+          0.009144350097975179,
+          0.034617896799477466
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.27)  ->  flan-t5-small (accept if score >= 0.31)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          1,
+          3
+        ],
+        "taus": [
+          0.2749579657408473,
+          0.286672387142925
+        ],
+        "tune_acc": 0.42833333333333334,
+        "tune_cost": 0.13583333333333333,
+        "accuracy": 0.410842586544742,
+        "cost": 0.13834841840067183,
+        "cost_with_scorer": 0.14860222077073806,
+        "stop_share": [
+          0.9124755062050947,
+          0.03200522534291313,
+          0.05551926845199216
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.27)  ->  flan-t5-base (accept if score >= 0.29)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          1,
+          3
+        ],
+        "taus": [
+          0.28148467602020527,
+          0.286672387142925
+        ],
+        "tune_acc": 0.431,
+        "tune_cost": 0.14875,
+        "accuracy": 0.410842586544742,
+        "cost": 0.1536978632079873,
+        "cost_with_scorer": 0.16438275636838667,
+        "stop_share": [
+          0.8667537557152188,
+          0.045721750489875895,
+          0.08752449379490529
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.28)  ->  flan-t5-base (accept if score >= 0.29)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          1,
+          3
+        ],
+        "taus": [
+          0.28148467602020527,
+          0.31229699439432534
+        ],
+        "tune_acc": 0.43333333333333335,
+        "tune_cost": 0.16003571428571428,
+        "accuracy": 0.4114957544088831,
+        "cost": 0.16349538117010357,
+        "cost_with_scorer": 0.1741802743305029,
+        "stop_share": [
+          0.8667537557152188,
+          0.022860875244937948,
+          0.11038536903984324
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.28)  ->  flan-t5-base (accept if score >= 0.31)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          3
+        ],
+        "taus": [
+          0.28148467602020527,
+          0.3597851541933684
+        ],
+        "tune_acc": 0.43366666666666664,
+        "tune_cost": 0.16542857142857142,
+        "accuracy": 0.418680600914435,
+        "cost": 0.1700569189138751,
+        "cost_with_scorer": 0.1807418120742745,
+        "stop_share": [
+          0.8667537557152188,
+          0.0,
+          0.13324624428478118
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.28)  ->  flan-t5-small (accept if score >= 0.36)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          3
+        ],
+        "taus": [
+          0.2881026936112908,
+          0.3597851541933684
+        ],
+        "tune_acc": 0.43633333333333335,
+        "tune_cost": 0.18361904761904763,
+        "accuracy": 0.4232527759634226,
+        "cost": 0.18873751982831016,
+        "cost_with_scorer": 0.19982271157973314,
+        "stop_share": [
+          0.8242978445460484,
+          0.0,
+          0.17570215545395165
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.29)  ->  flan-t5-small (accept if score >= 0.36)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          3
+        ],
+        "taus": [
+          0.31238148859093445,
+          0.3597851541933684
+        ],
+        "tune_acc": 0.43766666666666665,
+        "tune_cost": 0.2373333333333333,
+        "accuracy": 0.4435009797517962,
+        "cost": 0.24163291966035266,
+        "cost_with_scorer": 0.25386358122608943,
+        "stop_share": [
+          0.7028086218158066,
+          0.0013063357282821686,
+          0.2958850424559112
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.31)  ->  flan-t5-small (accept if score >= 0.36)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          3
+        ],
+        "taus": [
+          0.32198562608000914,
+          0.33407861641720926
+        ],
+        "tune_acc": 0.438,
+        "tune_cost": 0.24552380952380953,
+        "accuracy": 0.4435009797517962,
+        "cost": 0.25501726229355226,
+        "cost_with_scorer": 0.26766669776989827,
+        "stop_share": [
+          0.6583932070542129,
+          0.015676028739386023,
+          0.32593076420640105
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.32)  ->  flan-t5-small (accept if score >= 0.33)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          3
+        ],
+        "taus": [
+          0.33118938147147753,
+          0.34464151388522685
+        ],
+        "tune_acc": 0.44466666666666665,
+        "tune_cost": 0.2674285714285714,
+        "accuracy": 0.45003265839320705,
+        "cost": 0.27623961929644486,
+        "cost_with_scorer": 0.28930782868340027,
+        "stop_share": [
+          0.6139777922926192,
+          0.011757021554539516,
+          0.37426518615284127
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.33)  ->  flan-t5-small (accept if score >= 0.34)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          3
+        ],
+        "taus": [
+          0.3401770043786453,
+          0.34464151388522685
+        ],
+        "tune_acc": 0.4513333333333333,
+        "tune_cost": 0.2846190476190476,
+        "accuracy": 0.4526453298497714,
+        "cost": 0.2897545955024727,
+        "cost_with_scorer": 0.3031184100027993,
+        "stop_share": [
+          0.5826257348138472,
+          0.012410189418680601,
+          0.40496407576747223
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.34)  ->  flan-t5-small (accept if score >= 0.34)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          3
+        ],
+        "taus": [
+          0.3401770043786453,
+          0.3597851541933684
+        ],
+        "tune_acc": 0.45266666666666666,
+        "tune_cost": 0.2907619047619048,
+        "accuracy": 0.4526453298497714,
+        "cost": 0.29395353177195105,
+        "cost_with_scorer": 0.3073173462722777,
+        "stop_share": [
+          0.5826257348138472,
+          0.002612671456564337,
+          0.4147615937295885
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.34)  ->  flan-t5-small (accept if score >= 0.36)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          3
+        ],
+        "taus": [
+          0.36484447399673803,
+          0.3597851541933684
+        ],
+        "tune_acc": 0.455,
+        "tune_cost": 0.32685714285714285,
+        "accuracy": 0.45852384062704116,
+        "cost": 0.3298926938508911,
+        "cost_with_scorer": 0.3440386302136792,
+        "stop_share": [
+          0.4996734160679295,
+          0.003919007184846506,
+          0.496407576747224
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.36)  ->  flan-t5-small (accept if score >= 0.36)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          0,
+          3
+        ],
+        "taus": [
+          0.39464858706498607,
+          0.34464151388522685
+        ],
+        "tune_acc": 0.4603333333333333,
+        "tune_cost": 0.3546666666666667,
+        "accuracy": 0.4644023514043109,
+        "cost": 0.3573742651861528,
+        "cost_with_scorer": 0.3722530558925073,
+        "stop_share": [
+          0.42194644023514044,
+          0.019595035924232528,
+          0.558458523840627
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.39)  ->  flan-t5-small (accept if score >= 0.34)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          2,
+          3
+        ],
+        "taus": [
+          0.4113091141013353
+        ],
+        "tune_acc": 0.4686666666666667,
+        "tune_cost": 0.3792857142857143,
+        "accuracy": 0.47354670150228606,
+        "cost": 0.37400205281328724,
+        "cost_with_scorer": 0.38343062424185875,
+        "stop_share": [
+          0.387328543435663,
+          0.6126714565643371
+        ],
+        "strategy": "flan-t5-large (accept if score >= 0.41)  ->  flan-t5-xl (final, always accepted)"
+      },
+      {
+        "L": [
+          0,
+          3,
+          2
+        ],
+        "taus": [
+          0.34464151388522685,
+          0.2675006674435975
+        ],
+        "tune_acc": 0.481,
+        "tune_cost": 0.4132742857142857,
+        "accuracy": 0.4846505551926845,
+        "cost": 0.4212615470747411,
+        "cost_with_scorer": 0.43949668750583193,
+        "stop_share": [
+          0.0659699542782495,
+          0.8484650555192684,
+          0.08556499020248204
+        ],
+        "strategy": "flan-t5-small (accept if score >= 0.34)  ->  flan-t5-xl (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          3,
+          1,
+          2
+        ],
+        "taus": [
+          0.2675006674435975,
+          0.3557971213318266
+        ],
+        "tune_acc": 0.49633333333333335,
+        "tune_cost": 0.44009047619047614,
+        "accuracy": 0.4970607446113651,
+        "cost": 0.4409638891480824,
+        "cost_with_scorer": 0.4512238499580106,
+        "stop_share": [
+          0.9118223383409536,
+          0.005225342913128674,
+          0.0829523187459177
+        ],
+        "strategy": "flan-t5-xl (accept if score >= 0.27)  ->  flan-t5-base (accept if score >= 0.36)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          3,
+          4,
+          2
+        ],
+        "taus": [
+          0.2675006674435975,
+          0.3468451468996248
+        ],
+        "tune_acc": 0.49833333333333335,
+        "tune_cost": 0.5169190476190476,
+        "accuracy": 0.5016329196603527,
+        "cost": 0.5216982364467668,
+        "cost_with_scorer": 0.531958197256695,
+        "stop_share": [
+          0.9118223383409536,
+          0.043762246897452645,
+          0.04441541476159373
+        ],
+        "strategy": "flan-t5-xl (accept if score >= 0.27)  ->  llama-2-7b-chat (accept if score >= 0.35)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          3,
+          4,
+          2
+        ],
+        "taus": [
+          0.2675006674435975,
+          0.4664943833603503
+        ],
+        "tune_acc": 0.49866666666666665,
+        "tune_cost": 0.5194819047619047,
+        "accuracy": 0.5029392553886349,
+        "cost": 0.5243183726789213,
+        "cost_with_scorer": 0.5345783334888494,
+        "stop_share": [
+          0.9118223383409536,
+          0.020248203788373612,
+          0.06792945787067277
+        ],
+        "strategy": "flan-t5-xl (accept if score >= 0.27)  ->  llama-2-7b-chat (accept if score >= 0.47)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          3,
+          4,
+          2
+        ],
+        "taus": [
+          0.27649014147324646,
+          0.35793926243112056
+        ],
+        "tune_acc": 0.501,
+        "tune_cost": 0.5616314285714286,
+        "accuracy": 0.4970607446113651,
+        "cost": 0.5700419893626948,
+        "cost_with_scorer": 0.5807268825230941,
+        "stop_share": [
+          0.8667537557152188,
+          0.05943827563683867,
+          0.07380796864794252
+        ],
+        "strategy": "flan-t5-xl (accept if score >= 0.28)  ->  llama-2-7b-chat (accept if score >= 0.36)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          3,
+          4,
+          2
+        ],
+        "taus": [
+          0.28466967486949346,
+          0.3111103385948729
+        ],
+        "tune_acc": 0.5016666666666667,
+        "tune_cost": 0.6011438095238095,
+        "accuracy": 0.4983670803396473,
+        "cost": 0.6084277316413176,
+        "cost_with_scorer": 0.6194944480731548,
+        "stop_share": [
+          0.8262573481384716,
+          0.11887655127367734,
+          0.054866100587851074
+        ],
+        "strategy": "flan-t5-xl (accept if score >= 0.28)  ->  llama-2-7b-chat (accept if score >= 0.31)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          3,
+          2,
+          4
+        ],
+        "taus": [
+          0.3768248969876461,
+          0.37787745469401474
+        ],
+        "tune_acc": 0.5043333333333333,
+        "tune_cost": 0.7953333333333333,
+        "accuracy": 0.4846505551926845,
+        "cost": 0.8066772417654194,
+        "cost_with_scorer": 0.8202442847811888,
+        "stop_share": [
+          0.5610711952971914,
+          0.10973220117570215,
+          0.32919660352710645
+        ],
+        "strategy": "flan-t5-xl (accept if score >= 0.38)  ->  flan-t5-large (accept if score >= 0.38)  ->  llama-2-7b-chat (final, always accepted)"
+      },
+      {
+        "L": [
+          3,
+          4,
+          2
+        ],
+        "taus": [
+          0.3768248969876461,
+          0.26088162084530303
+        ],
+        "tune_acc": 0.5086666666666667,
+        "tune_cost": 0.8475038095238095,
+        "accuracy": 0.48987589810581317,
+        "cost": 0.870411495754409,
+        "cost_with_scorer": 0.8839785387701783,
+        "stop_share": [
+          0.5610711952971914,
+          0.41280209013716523,
+          0.02612671456564337
+        ],
+        "strategy": "flan-t5-xl (accept if score >= 0.38)  ->  llama-2-7b-chat (accept if score >= 0.26)  ->  flan-t5-large (final, always accepted)"
+      },
+      {
+        "L": [
+          3,
+          4,
+          2
+        ],
+        "taus": [
+          0.4041253308628895,
+          0.26088162084530303
+        ],
+        "tune_acc": 0.512,
+        "tune_cost": 0.8893190476190476,
+        "accuracy": 0.4846505551926845,
+        "cost": 0.9106186432770367,
+        "cost_with_scorer": 0.9245613511243819,
+        "stop_share": [
+          0.5212279555845852,
+          0.44937949052906595,
+          0.02939255388634879
+        ],
+        "strategy": "flan-t5-xl (accept if score >= 0.40)  ->  llama-2-7b-chat (accept if score >= 0.26)  ->  flan-t5-large (final, always accepted)"
+      }
+    ]
+  },
+  "rl_points": {
+    "0.05": {
+      "cost": 0.3009797517962116,
+      "accuracy": 0.4284781188765513
+    },
+    "0.1": {
+      "cost": 0.6846832135858916,
+      "accuracy": 0.4559111691704768
+    },
+    "0.25": {
+      "cost": 0.23765979285247732,
+      "accuracy": 0.47485303723056826
+    },
+    "0.5": {
+      "cost": 0.11225716151908184,
+      "accuracy": 0.42129327237099934
+    },
+    "1.0": {
+      "cost": 0.07067089670616777,
+      "accuracy": 0.3847158719790986
+    },
+    "2.0": {
+      "cost": 0.0357142857142857,
+      "accuracy": 0.33442194644023515
+    }
+  },
+  "matched": {
+    "0.05|A": {
+      "rl_cost": 0.3009797517962116,
+      "rl_acc": 0.4284781188765513,
+      "casc_cost": 0.30685639637958384,
+      "casc_acc": 0.4435009797517962,
+      "diff": -0.015022860875244938,
+      "ci95": [
+        -0.033964728935336384,
+        0.0032658393207054214
+      ],
+      "verdict": "no significant difference",
+      "strategy": "flan-t5-large (accept if score >= 0.30)  ->  flan-t5-small (accept if score >= 0.60)  ->  flan-t5-xl (final, always accepted)"
+    },
+    "0.05|B": {
+      "rl_cost": 0.3009797517962116,
+      "rl_acc": 0.4284781188765513,
+      "casc_cost": 0.29395353177195105,
+      "casc_acc": 0.4526453298497714,
+      "diff": -0.024167210973220117,
+      "ci95": [
+        -0.04443174395819726,
+        -0.0032658393207054214
+      ],
+      "verdict": "cascade better",
+      "strategy": "flan-t5-large (accept if score >= 0.34)  ->  flan-t5-small (accept if score >= 0.36)  ->  flan-t5-xl (final, always accepted)"
+    },
+    "0.1|A": {
+      "rl_cost": 0.6846832135858916,
+      "rl_acc": 0.4559111691704768,
+      "casc_cost": 0.7046262946720164,
+      "casc_acc": 0.4951012410189419,
+      "diff": -0.039190071848465055,
+      "ci95": [
+        -0.06466361854996734,
+        -0.012410189418680601
+      ],
+      "verdict": "cascade better",
+      "strategy": "flan-t5-xl (accept if score >= 0.24)  ->  llama-2-7b-chat (accept if score >= 0.27)  ->  flan-t5-large (final, always accepted)"
+    },
+    "0.1|B": {
+      "rl_cost": 0.6846832135858916,
+      "rl_acc": 0.4559111691704768,
+      "casc_cost": 0.6084277316413176,
+      "casc_acc": 0.4983670803396473,
+      "diff": -0.042455911169170475,
+      "ci95": [
+        -0.06662312214239059,
+        -0.017635532331809273
+      ],
+      "verdict": "cascade better",
+      "strategy": "flan-t5-xl (accept if score >= 0.28)  ->  llama-2-7b-chat (accept if score >= 0.31)  ->  flan-t5-large (final, always accepted)"
+    },
+    "0.25|A": {
+      "rl_cost": 0.23765979285247732,
+      "rl_acc": 0.47485303723056826,
+      "casc_cost": 0.24362508164598295,
+      "casc_acc": 0.43435662965382105,
+      "diff": 0.040496407576747225,
+      "ci95": [
+        0.015659699542782495,
+        0.06466361854996734
+      ],
+      "verdict": "RL better",
+      "strategy": "flan-t5-large (accept if score >= 0.24)  ->  flan-t5-base (accept if score >= 0.41)  ->  flan-t5-xl (final, always accepted)"
+    },
+    "0.25|B": {
+      "rl_cost": 0.23765979285247732,
+      "rl_acc": 0.47485303723056826,
+      "casc_cost": 0.24163291966035266,
+      "casc_acc": 0.4435009797517962,
+      "diff": 0.031352057478772045,
+      "ci95": [
+        0.005878510777269758,
+        0.05488242978445451
+      ],
+      "verdict": "RL better",
+      "strategy": "flan-t5-large (accept if score >= 0.31)  ->  flan-t5-small (accept if score >= 0.36)  ->  flan-t5-xl (final, always accepted)"
+    },
+    "0.5|A": {
+      "rl_cost": 0.11225716151908184,
+      "rl_acc": 0.42129327237099934,
+      "casc_cost": 0.11142857142857142,
+      "casc_acc": 0.4199869366427172,
+      "diff": 0.0013063357282821686,
+      "ci95": [
+        0.0,
+        0.0032658393207054214
+      ],
+      "verdict": "no significant difference",
+      "strategy": "flan-t5-large (final, always accepted)"
+    },
+    "0.5|B": {
+      "rl_cost": 0.11225716151908184,
+      "rl_acc": 0.42129327237099934,
+      "casc_cost": 0.11142857142857142,
+      "casc_acc": 0.4199869366427172,
+      "diff": 0.0013063357282821686,
+      "ci95": [
+        0.0,
+        0.0032658393207054214
+      ],
+      "verdict": "no significant difference",
+      "strategy": "flan-t5-large (final, always accepted)"
+    },
+    "1.0|A": {
+      "rl_cost": 0.07067089670616777,
+      "rl_acc": 0.3847158719790986,
+      "casc_cost": 0.06839134086031538,
+      "casc_acc": 0.34291312867406926,
+      "diff": 0.041802743305029394,
+      "ci95": [
+        0.013716525146962769,
+        0.06923579359895493
+      ],
+      "verdict": "RL better",
+      "strategy": "flan-t5-base (accept if score >= 0.33)  ->  flan-t5-small (accept if score >= 0.24)  ->  flan-t5-large (final, always accepted)"
+    },
+    "1.0|B": {
+      "rl_cost": 0.07067089670616777,
+      "rl_acc": 0.3847158719790986,
+      "casc_cost": 0.07281981897919194,
+      "casc_acc": 0.3638145003265839,
+      "diff": 0.020901371652514697,
+      "ci95": [
+        -0.005878510777269758,
+        0.048334421946440234
+      ],
+      "verdict": "no significant difference",
+      "strategy": "flan-t5-base (accept if score >= 0.28)  ->  flan-t5-small (accept if score >= 0.34)  ->  flan-t5-large (final, always accepted)"
+    },
+    "2.0|A": {
+      "rl_cost": 0.0357142857142857,
+      "rl_acc": 0.33442194644023515,
+      "casc_cost": 0.035572454978072224,
+      "casc_acc": 0.3200522534291313,
+      "diff": 0.014369693011103853,
+      "ci95": [
+        -0.002612671456564337,
+        0.03069888961463096
+      ],
+      "verdict": "no significant difference",
+      "strategy": "flan-t5-small (accept if score >= 0.32)  ->  flan-t5-base (final, always accepted)"
+    },
+    "2.0|B": {
+      "rl_cost": 0.0357142857142857,
+      "rl_acc": 0.33442194644023515,
+      "casc_cost": 0.0357142857142857,
+      "casc_acc": 0.33442194644023515,
+      "diff": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "verdict": "no significant difference",
+      "strategy": "flan-t5-base (final, always accepted)"
+    }
+  },
+  "total_compute_T": {
+    "RL (online over the pool; includes learning)": {
+      "train": 35.4,
+      "serve": 2.55,
+      "total": 38.0
+    },
+    "HybridLLM large_gap (flan-t5-small + llama-2-7b-chat)": {
+      "train": 67.3,
+      "serve": 2.51,
+      "total": 69.8
+    },
+    "HybridLLM medium_gap (flan-t5-large + llama-2-7b-chat)": {
+      "train": 73.9,
+      "serve": 2.62,
+      "total": 76.5
+    },
+    "HybridLLM small_gap (flan-t5-xl + llama-2-7b-chat)": {
+      "train": 95.0,
+      "serve": 4.59,
+      "total": 99.6
+    },
+    "FrugalGPT cascade A (needs all 5 models on 9500 train questions)": {
+      "train": 105.5,
+      "serve": 2.61,
+      "total": 108.2
+    },
+    "FrugalGPT cascade B (needs all 5 models on 9500 train questions)": {
+      "train": 105.5,
+      "serve": 2.59,
+      "total": 108.1
+    }
+  }
+}

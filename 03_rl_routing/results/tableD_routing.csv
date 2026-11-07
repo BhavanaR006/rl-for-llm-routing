@@ -1,0 +1,9 @@
+router,flan-t5-small,flan-t5-base,flan-t5-large,flan-t5-xl,llama-2-7b-chat
+RL (trained),5.9,1.5,28.6,0.0,64.1
+Hybrid large_gap r_det,32.5,0.0,0.0,0.0,67.5
+Hybrid large_gap r_trans,32.5,0.0,0.0,0.0,67.5
+Hybrid medium_gap r_det,0.0,0.0,37.5,0.0,62.5
+Hybrid medium_gap r_trans,0.0,0.0,37.5,0.0,62.5
+Hybrid small_gap r_det,0.0,0.0,0.0,57.5,42.5
+Hybrid small_gap r_trans,0.0,0.0,0.0,57.5,42.5
+Oracle (cheapest passing),53.2,10.9,5.2,5.2,25.5
