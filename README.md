@@ -105,6 +105,8 @@ A **seed** fixes the order of the training questions, the starting weights of th
 ## Running the code
 
 The notebooks were run on a shared GPU server (Jupyter, Python 3.10, one NVIDIA L40S). Intermediate results are cached under `~/hybridllm_project/` (`ckpt_shared/` and `outputs/`), and later notebooks read the caches written by earlier ones (notebooks 02 and 03 before 05, and 05 before 06 and 07). To run elsewhere, edit `WORK_DIR` in each notebook's setup cell. `hybridllm_original_pair_kaggle.ipynb` was run on Kaggle.
+
+
 Saved result files are in 03_rl_routing/results/
 
 ```bash
