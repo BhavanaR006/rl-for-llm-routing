@@ -1,4 +1,4 @@
-Saved outputs from the notebooks (likely mapping from file names; check before relying on it):
+Saved outputs from the notebooks (likely mapping from file names):
 - gr_*: notebook 07 (RL vs GraphRouter and predictive router)
 - ms_*: notebook 05 (multi-seed bandits); ms_final_comparison.png: notebook 06
 - fg_*: notebook 04 (FrugalGPT on MMLU); mmlu_*: notebook 03
